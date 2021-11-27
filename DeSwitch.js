@@ -626,11 +626,11 @@ queryBalance.onclick = async () => {
     console.log(result);
     pendingBalanceValue.innerHTML = (
       "Current pending balance is "
-      // +result[0]
+      +result[0]
     );
     confirmedBalanceValue.innerHTML = (
       "Current confirmed balance is "
-      // +result[1]
+      +result[1]
     );
   });
 }
@@ -677,7 +677,7 @@ queryGame.onclick = async () => {
     tempRental = result[0];
     gameStatusRZ.innerHTML = (
       "Queried game with tracking ID "+
-      queryTrackingId.value+
+      queryTrackingId+
       " is "+
       tempStatus+
       ". Deposit is "+
