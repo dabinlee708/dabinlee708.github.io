@@ -599,6 +599,7 @@ const currentGameCount = document.getElementById("currentRegisteredGameCount");
 const queryBalance = document.getElementById("checkBalance");
 const queryChainlink = document.getElementById("chainlinkButton");
 
+
 //declare user input fields
 const gameStatusRZ = document.getElementById("updateTextRZ");
 const gameStatusOZ = document.getElementById("updateTextOZ");
@@ -628,16 +629,38 @@ deSwitch.methods.queryGameCount().call((err, result) => {
     " games registered");
   });
 
-
 priceFeed.methods.latestRoundData().call()
     .then((roundData) => {
-        console.log("Latest Round Data", roundData, roundData[1])
-        chainlinkResult.innerHTML = (
-          "current price of ETH is around"+
+        console.log("Latest Round Data", roundData);
+        var aa = document.getElementById("chainlinkResult");
+        var formattedTime = new Date(roundData[2]*1000).toLocaleDateString("en-US");
+        var formmatedTime2 = new Date(roundData[2]*1000).toLocaleTimeString("en-US")
+        aa.innerHTML = (
+          "current price of ETH is US$"+
           (roundData[1]/100000000) +
-          "USD based on Chainlink Oracle"
+          " "+
+          "USD based on Chainlink Oracle, updated at "+
+          formattedTime+
+          formmatedTime2
+        );
+})
+
+queryChainlink.onclick = async() =>{
+  priceFeed.methods.latestRoundData().call().then((roundData)=>{
+    console.log("Latest Round Data", roundData);
+        var aa = document.getElementById("chainlinkResult");
+        var formattedTime = new Date(roundData[2]*1000).toLocaleDateString("en-US");
+        var formmatedTime2 = new Date(roundData[2]*1000).toLocaleTimeString("en-US")
+        aa.innerHTML = (
+          "current price of ETH is US$"+
+          (roundData[1]/100000000) +
+          " "+
+          "USD based on Chainlink Oracle, updated at "+
+          formattedTime+
+          formmatedTime2
         );
   })
+}
 
 queryBalance.onclick = async () => {
   // const queryAddress = document.getElementById
@@ -823,11 +846,6 @@ receiveGameFromRenter.onclick = async ()=>{
     ).on('error', console.error);
   })
 
-  // queryChainlink.onclick = async () => {
-  //   priceFeed.methods.latestRoundData().call()
-  //   .then((roundData) => {
-  //       console.log("Latest Round Data", roundData)
-  //       chainlinkResult.innerHTML=(roundData.answer);
-  //   })
+
  
 }
