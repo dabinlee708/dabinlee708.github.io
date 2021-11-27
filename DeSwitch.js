@@ -631,10 +631,10 @@ deSwitch.methods.queryGameCount().call((err, result) => {
 
 priceFeed.methods.latestRoundData().call()
     .then((roundData) => {
-        console.log("Latest Round Data", roundData)
+        console.log("Latest Round Data", roundData, roundData[1])
         chainlinkResult.innerHTML = (
           "current price of ETH is around"+
-          roundData[1]/100000000 +
+          (roundData[1]/100000000) +
           "USD based on Chainlink Oracle"
         );
   })
