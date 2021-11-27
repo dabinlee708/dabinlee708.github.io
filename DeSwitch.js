@@ -817,7 +817,7 @@ receiveGameFromRenter.onclick = async ()=>{
 
 queryChainlink.onclick = async () => {
 
-  deSwitch.methods.getLatestPrice().call((err, result) => {
+  priceFeed.methods.getLatestPrice().call((err, result) => {
     console.log(result);
     chainlinkResult.innerHTML=result;
   });
