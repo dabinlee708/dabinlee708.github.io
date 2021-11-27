@@ -815,12 +815,13 @@ receiveGameFromRenter.onclick = async ()=>{
     ).on('error', console.error);
   })
 
-queryChainlink.onclick = async () => {
-
-  priceFeed.methods.getLatestPrice().call((err, result) => {
-    console.log(result);
-    chainlinkResult.innerHTML=result;
-  });
+  queryChainlink.onclick = async () => {
+  priceFeed.methods.latestRoundData().call()
+    .then((roundData) => {
+        console.log("Latest Round Data", roundData)
+        chainlinkResult.innerHTML=(roundData.answer);
+    })
+ 
 }
 
 
