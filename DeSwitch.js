@@ -628,6 +628,17 @@ deSwitch.methods.queryGameCount().call((err, result) => {
     " games registered");
   });
 
+
+priceFeed.methods.latestRoundData().call()
+    .then((roundData) => {
+        console.log("Latest Round Data", roundData)
+        chainlinkResult.innerHTML = (
+          "current price of ETH is around"+
+          roundData[1]/100000000 +
+          "USD based on Chainlink Oracle"
+        );
+  })
+
 queryBalance.onclick = async () => {
   // const queryAddress = document.getElementById
   console.log(ethereum.selectedAddress);
@@ -635,11 +646,11 @@ queryBalance.onclick = async () => {
     console.log(result);
     pendingBalanceValue.innerHTML = (
       "Current pending balance is "
-      +result[0]
+      // +result[0]
     );
     confirmedBalanceValue.innerHTML = (
       "Current confirmed balance is "
-      +result[1]
+      // +result[1]
     );
   });
 }
@@ -785,10 +796,7 @@ returnGameToOwner.onclick = async ()=>{
   })
 }
 
-priceFeed.methods.latestRoundData().call()
-    .then((roundData) => {
-        console.log("Latest Round Data", roundData)
-    })
+
 
 receiveGameFromRenter.onclick = async ()=>{
   const receiveGameId = document.getElementById("trackingIdOZ").value;
@@ -815,12 +823,12 @@ receiveGameFromRenter.onclick = async ()=>{
     ).on('error', console.error);
   })
 
-  queryChainlink.onclick = async () => {
-  priceFeed.methods.latestRoundData().call()
-    .then((roundData) => {
-        console.log("Latest Round Data", roundData)
-        chainlinkResult.innerHTML=(roundData.answer);
-    })
+  // queryChainlink.onclick = async () => {
+  //   priceFeed.methods.latestRoundData().call()
+  //   .then((roundData) => {
+  //       console.log("Latest Round Data", roundData)
+  //       chainlinkResult.innerHTML=(roundData.answer);
+  //   })
  
 }
 
