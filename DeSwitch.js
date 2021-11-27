@@ -610,14 +610,14 @@ const confirmedBalanceValue = document.getElementById("confirmedBalance");
 const chainlinkResult = document.getElementById("chainlinkResult");
 
 
-const web3Infura = new Web3("https://ropsten.infura.io/v3/a989574a645148b8b40bd6ff9bcbb4ab")
+// const web3Infura = new Web3("https://ropsten.infura.io/v3/a989574a645148b8b40bd6ff9bcbb4ab")
 
 
 var web3 = new Web3(window.ethereum);
 const deSwitch = new web3.eth.Contract(ssABI, ssAddress);
 const aggregatorV3InterfaceABI = [{ "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "description", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint80", "name": "_roundId", "type": "uint80" }], "name": "getRoundData", "outputs": [{ "internalType": "uint80", "name": "roundId", "type": "uint80" }, { "internalType": "int256", "name": "answer", "type": "int256" }, { "internalType": "uint256", "name": "startedAt", "type": "uint256" }, { "internalType": "uint256", "name": "updatedAt", "type": "uint256" }, { "internalType": "uint80", "name": "answeredInRound", "type": "uint80" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "latestRoundData", "outputs": [{ "internalType": "uint80", "name": "roundId", "type": "uint80" }, { "internalType": "int256", "name": "answer", "type": "int256" }, { "internalType": "uint256", "name": "startedAt", "type": "uint256" }, { "internalType": "uint256", "name": "updatedAt", "type": "uint256" }, { "internalType": "uint80", "name": "answeredInRound", "type": "uint80" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "version", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }]
 const addr = "0x9326BFA02ADD2366b30bacB125260Af641031331"
-const priceFeed = new web3Infura.eth.Contract(aggregatorV3InterfaceABI, addr)
+const priceFeed = new web3.eth.Contract(aggregatorV3InterfaceABI, addr)
 
 deSwitch.setProvider(window.ethereum);
 deSwitch.methods.queryGameCount().call((err, result) => {
