@@ -1,9 +1,9 @@
 
-const ssAddress = '0x61B28a04c63961BfCdb2169967D45E94d0e4c2EB'
+// const ssAddress = '0x61B28a04c63961BfCdb2169967D45E94d0e4c2EB'
+const ssAddress = '0x125340Cca81f9b9838cB7832b872779F00Bf1f77'
 const ssABI = [
   {
     "inputs": [],
-    "payable": false,
     "stateMutability": "nonpayable",
     "type": "constructor"
   },
@@ -250,7 +250,6 @@ const ssABI = [
     "type": "event"
   },
   {
-    "constant": true,
     "inputs": [
       {
         "internalType": "address",
@@ -266,17 +265,15 @@ const ssABI = [
         "type": "uint256"
       }
     ],
-    "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": true,
     "inputs": [
       {
-        "internalType": "address",
+        "internalType": "uint256",
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "name": "games",
@@ -322,12 +319,10 @@ const ssABI = [
         "type": "address"
       }
     ],
-    "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": true,
     "inputs": [
       {
         "internalType": "address",
@@ -343,33 +338,10 @@ const ssABI = [
         "type": "uint256"
       }
     ],
-    "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": true,
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "registerIdList",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "payable": false,
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "constant": true,
     "inputs": [],
     "name": "queryGameCount",
     "outputs": [
@@ -379,12 +351,23 @@ const ssABI = [
         "type": "uint256"
       }
     ],
-    "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": false,
+    "inputs": [],
+    "name": "getLatestPrice",
+    "outputs": [
+      {
+        "internalType": "int256",
+        "name": "",
+        "type": "int256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
     "inputs": [
       {
         "internalType": "uint256",
@@ -415,12 +398,10 @@ const ssABI = [
         "type": "uint256"
       }
     ],
-    "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": true,
     "inputs": [
       {
         "internalType": "uint256",
@@ -436,12 +417,10 @@ const ssABI = [
         "type": "string"
       }
     ],
-    "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": true,
     "inputs": [
       {
         "internalType": "address",
@@ -462,12 +441,10 @@ const ssABI = [
         "type": "uint256"
       }
     ],
-    "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": true,
     "inputs": [
       {
         "internalType": "uint256",
@@ -488,12 +465,10 @@ const ssABI = [
         "type": "uint256"
       }
     ],
-    "payable": false,
     "stateMutability": "view",
     "type": "function"
   },
   {
-    "constant": false,
     "inputs": [
       {
         "internalType": "uint256",
@@ -509,12 +484,10 @@ const ssABI = [
         "type": "string"
       }
     ],
-    "payable": true,
     "stateMutability": "payable",
     "type": "function"
   },
   {
-    "constant": false,
     "inputs": [
       {
         "internalType": "uint256",
@@ -530,12 +503,10 @@ const ssABI = [
         "type": "string"
       }
     ],
-    "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": false,
     "inputs": [
       {
         "internalType": "uint256",
@@ -551,12 +522,10 @@ const ssABI = [
         "type": "string"
       }
     ],
-    "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": false,
     "inputs": [
       {
         "internalType": "uint256",
@@ -572,12 +541,10 @@ const ssABI = [
         "type": "string"
       }
     ],
-    "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "constant": false,
     "inputs": [
       {
         "internalType": "uint256",
@@ -593,7 +560,6 @@ const ssABI = [
         "type": "string"
       }
     ],
-    "payable": false,
     "stateMutability": "nonpayable",
     "type": "function"
   }
