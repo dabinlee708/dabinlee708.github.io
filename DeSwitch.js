@@ -831,6 +831,3 @@ receiveGameFromRenter.onclick = async ()=>{
   //   })
  
 }
-
-
-}
