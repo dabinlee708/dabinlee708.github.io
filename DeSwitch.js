@@ -667,17 +667,17 @@ queryBalance.onclick = async () => {
 queryChainlink.onclick = async() =>{
   priceFeed.methods.latestRoundData().call().then((roundData)=>{
     console.log("Latest Round Data", roundData);
-        var aa = document.getElementById("chainlinkResult");
-        var formattedTime = new Date(roundData[2]*1000).toLocaleDateString("en-US");
-        var formmatedTime2 = new Date(roundData[2]*1000).toLocaleTimeString("en-US")
-        aa.innerHTML = (
-          "current price of ETH is US$"+
-          (roundData[1]/100000000) +
-          " "+
-          "USD based on Chainlink Oracle, updated at "+
-          formattedTime+
-          formmatedTime2
-        );
+    var aa = document.getElementById("chainlinkResult");
+    var formattedTime = new Date(roundData[2]*1000).toLocaleDateString("en-US");
+    var formmatedTime2 = new Date(roundData[2]*1000).toLocaleTimeString("en-US");
+    aa.innerHTML = (
+      "current price of ETH is US$"+
+      (roundData[1]/100000000) +
+      " "+
+      "USD based on Chainlink Oracle, updated at "+
+      formattedTime+
+      formmatedTime2
+      );
   })
 }
 
