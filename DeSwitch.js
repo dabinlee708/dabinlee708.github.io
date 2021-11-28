@@ -632,7 +632,7 @@ deSwitch.methods.queryGameCount().call((err, result) => {
 priceFeed.methods.latestRoundData().call()
     .then((roundData) => {
         console.log("Latest Round Data", roundData);
-        var aa = document.getElementById("chainlinkResult");
+        var aa = document.getElementById("chainlinkResult").value;
         var formattedTime = new Date(roundData[2]*1000).toLocaleDateString("en-US");
         var formmatedTime2 = new Date(roundData[2]*1000).toLocaleTimeString("en-US");
         console.log(formattedTime);
