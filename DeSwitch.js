@@ -633,9 +633,8 @@ priceFeed.methods.latestRoundData().call()
     .then((roundData) => {
         console.log("Latest Round Data", roundData);
         var aa = document.getElementById("chainlinkResult");
-        
-        var formattedTime = new Date(roundData[updatedAt]*1000).toLocaleDateString("en-US");
-        var formmatedTime2 = new Date(roundData[updatedAt]*1000).toLocaleTimeString("en-US");
+        var formattedTime = new Date(roundData[2]*1000).toLocaleDateString("en-US");
+        var formmatedTime2 = new Date(roundData[2]*1000).toLocaleTimeString("en-US");
         console.log(updatedAt)
         aa.innerHTML = (
           "current price of ETH is US$"+
